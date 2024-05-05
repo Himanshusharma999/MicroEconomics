@@ -1,4 +1,7 @@
 import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt 
+import nashpy as n
 
 def BR_1(Eu1): 
     '''Best response in binary actions 
@@ -26,8 +29,7 @@ def solve_for_MSNE(U1, U2, DOPLOT=True):
     if DOPLOT: 
         eqs = np.array(eqs) # 3-dim: (equilibrium, player, action)
         i_action = 0 # the x and y axes will show Pr(first action chosen)
-        plt.scatter(eqs[:,0,i_action], eqs[:,1,i_action], color='black', label='MSNE (Lemke-Howson) ') # the axes 
-show 
+        plt.scatter(eqs[:,0,i_action], eqs[:,1,i_action], color='black', label='MSNE (Lemke-Howson) ') # the axes show 
         for eq in np.array(eqs): 
             plt.scatter(eq[0,0], eq[1,0], color='black')
     else: 
