@@ -75,14 +75,14 @@ print(f'yNE = {yNE}')
 
 # FILL IN 
 
-ySEQ = None # FILL IN 
+ySEQ = np.array([1, 1/2]) # FILL IN 
 
 print(f'Sequential: {ySEQ.round(3)}')
 
 # %% Social optimum (SO)
 # This occurs when we maximize the sum of the two players' utilities wrt. both their choices
 y0 = np.array([0.5, 0.5])
-ySO = None # FILL IN 
+ySO = np.array([2,2]) # FILL IN 
 print(f'SO: {yNE.round(3)}')
 
 plt.plot(yy, yy2, label=f'BR2(y1)')
