@@ -23,11 +23,11 @@ y0 = np.array([0.5,0.5])
 # We write the best response functions as numerical functions here; then we can re-use 
 # them in other settings too 
 def BR2(y1): 
-    # FILL IN 
+    y2 = y1 / 2
     return y2
     
 def BR1(y2):
-    # FILL IN 
+    y1 = np.sqrt(y2)
     return y1
 
 yy = np.linspace(0., 4., 100)
@@ -54,10 +54,12 @@ def IBR(y0:np.ndarray, maxit=100, tol=1e-5) -> np.ndarray:
         y2_ = y2*1.
 
         # update y1 and y2 
-        # FILL IN 
+        y2 = BR2(y1_)
+        y1 = BR1(y2_)
 
         if (np.abs(y1-y1_).max() < 1e-6) and (np.abs(y2-y2_).max() < 1e-6):
             print(f'IBR successful after {it} iterations')
+            success = True
             break 
 
     if not success: 
